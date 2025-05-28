@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.intranet.controllers;
-
 
 import com.intranet.db.DBConnection;
 import com.intranet.models.Usuario;
@@ -13,20 +8,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author Gianmarco Chistama
- */
 public class UsuarioController {
-
     private final Connection conn;
 
-    public UsuarioController() {
-        this.conn = DBConnection.getInstancia().getConexion(); 
+    public UsuarioController(DBConnection db) {
+        this.conn = db.getConexion();
     }
     
     public Usuario login(String correo, String contraseña) {
         String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
+        
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, correo);
             stmt.setString(2, contraseña);
@@ -50,6 +41,7 @@ public class UsuarioController {
 
     public boolean registrar(Usuario usuario) {
         String sql = "INSERT INTO usuarios (nombre, apellido, correo, contraseña, rol) VALUES (?, ?, ?, ?, ?)";
+        
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, usuario.getNombre());
             stmt.setString(2, usuario.getApellido());

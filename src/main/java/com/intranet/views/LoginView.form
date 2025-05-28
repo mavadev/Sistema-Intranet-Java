@@ -79,7 +79,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="124" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="linkRegister" min="-2" max="-2" attributes="0"/>
+                          <Component id="redirectRegistro" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLoginContraseña" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtLoginContraseña" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="linkRegister" min="-2" max="-2" attributes="0"/>
+                      <Component id="redirectRegistro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btnLogin" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace pref="174" max="32767" attributes="0"/>
@@ -142,7 +142,7 @@
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="linkRegister">
+            <Component class="javax.swing.JLabel" name="redirectRegistro">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
@@ -150,7 +150,7 @@
                 <Property name="text" type="java.lang.String" value="&#xbf;Olvidaste tu contrase&#xf1;a?"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="linkRegisterMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="redirectRegistroMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLogin">

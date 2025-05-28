@@ -45,8 +45,10 @@ public class DBConnection {
     }
     
     public void cerrarConexionDB() throws SQLException{
-        if(connection != null && !connection.isClosed()){
-            connection.close();
+        try {
+            if (connection != null) connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 }

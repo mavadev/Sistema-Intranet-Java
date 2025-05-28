@@ -3,8 +3,8 @@ package com.intranet.views;
 import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
 import com.intranet.app.AppContext;
 import com.intranet.models.Usuario;
+import com.intranet.utils.AlertUtils;
 import com.intranet.utils.Validador;
-import javax.swing.JOptionPane;
 
 public class LoginView extends javax.swing.JFrame {
 
@@ -139,22 +139,22 @@ public class LoginView extends javax.swing.JFrame {
         
         // Validacion de valores ingresados
         if (correo.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.");
+            AlertUtils.showWarning("Todos los campos son obligatorios");
         } else if (!Validador.esCorreoValido(correo)) {
-            JOptionPane.showMessageDialog(null, "Correo electrónico no válido.");
+            AlertUtils.showWarning("Correo electrónico no válido");
         } else if (!Validador.esPasswordValido(password)) {
-            JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres.");
+            AlertUtils.showWarning("La contraseña debe tener al menos 8 caracteres");
         } else {
             // Obtener resultado de autenticar usuario
             Usuario usuario = AppContext.getUsuarioController().login(correo, password);
             
             // En caso encuentre el usuario
             if(usuario != null){
-                JOptionPane.showMessageDialog(null, "Iniciaste sesión.");
+                AlertUtils.showSuccess("Bienvenido "+ usuario.getNombre()+"!");
             } 
             // Si no encuentra el usuario
             else {
-                JOptionPane.showMessageDialog(null, "Usuario no encontrado.");
+                AlertUtils.showMessage("Usuario no encontrado");
             }
         }
     }//GEN-LAST:event_btnLoginActionPerformed

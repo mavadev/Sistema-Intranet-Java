@@ -179,8 +179,14 @@ public class LoginView extends javax.swing.JFrame {
 
         // En caso encuentre el usuario
         if(usuario != null){
-            AlertUtils.showSuccess("Bienvenido "+ usuario.getNombre()+"!");
-        } 
+            AlertUtils.showSuccess("Bienvenido "+usuario.getNombre()+"!");
+
+            Dashboard dashboardView = new Dashboard();
+            dashboardView.setUsuario(usuario.getNombre());
+            
+            this.setVisible(false);
+            dashboardView.setVisible(true);
+        }
         // Si no encuentra el usuario
         else {
             AlertUtils.showMessage("Usuario no encontrado");

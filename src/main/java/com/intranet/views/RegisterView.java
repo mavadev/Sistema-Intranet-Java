@@ -180,13 +180,19 @@ public class RegisterView extends javax.swing.JFrame {
             return;
         } 
         
-        // Crear el usuario que se creará
+        // Crear el usuario
         Usuario nuevoUsuario = new Usuario(nombre,apellido,correo,password, "alumno");
         Boolean creadoCorrectamente = AppContext.getUsuarioController().register(nuevoUsuario);
 
         // En caso se cree correctamente
         if(creadoCorrectamente){
             AlertUtils.showSuccess("Usuario "+nombre+" creado con éxito!");
+            
+            Dashboard dashboardView = new Dashboard();
+            dashboardView.setUsuario(nombre);
+            
+            this.setVisible(false);
+            dashboardView.setVisible(true);
         } 
         // Caso hubiera algún error al crear el usuario
         else {

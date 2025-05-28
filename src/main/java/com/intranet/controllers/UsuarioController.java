@@ -39,7 +39,7 @@ public class UsuarioController {
         return null;
     }
 
-    public boolean registrar(Usuario usuario) {
+    public boolean register(Usuario usuario) {
         String sql = "INSERT INTO usuarios (nombre, apellido, correo, contraseña, rol) VALUES (?, ?, ?, ?, ?)";
         
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {

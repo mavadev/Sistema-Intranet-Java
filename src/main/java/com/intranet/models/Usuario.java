@@ -15,7 +15,7 @@ public class Usuario {
     private String nombre, apellido, correo, contraseña, rol;
     private LocalDateTime creado_en;
 
-    // CONSTRUCTOR
+    // CONSTRUCTOR CON ID (Mostrar)
     public Usuario(int id, String nombre, String apellido, String correo, String contraseña, String rol, LocalDateTime creado_en) {
         this.id = id;
         this.nombre = nombre;
@@ -24,6 +24,15 @@ public class Usuario {
         this.contraseña = contraseña;
         this.rol = rol;
         this.creado_en = creado_en;
+    }
+    
+    // CONSTRUCTOR SIN ID (Creación)
+    public Usuario(String nombre, String apellido, String correo, String contraseña, String rol) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contraseña = contraseña;
+        this.rol = rol;
     }
     
     // GETTERS Y SETTERS

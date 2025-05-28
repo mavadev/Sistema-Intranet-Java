@@ -78,15 +78,21 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="115" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="linkLogin" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="redirectLogin" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtRegisterCorreo" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtRegisterNombre" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnCreate" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtRegisterContraseña" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                          <Component id="btnRegister" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtRegisterContraseña" alignment="0" pref="287" max="32767" attributes="0"/>
+                          <Component id="txtRegisterApellido" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
@@ -101,7 +107,11 @@
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtRegisterNombre" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtRegisterApellido" min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtRegisterCorreo" min="-2" pref="33" max="-2" attributes="0"/>
@@ -110,10 +120,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtRegisterContraseña" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="linkLogin" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="redirectLogin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnCreate" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace pref="140" max="32767" attributes="0"/>
+                      <Component id="btnRegister" min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -147,21 +160,21 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtRegisterCorreo">
             </Component>
-            <Component class="javax.swing.JLabel" name="linkLogin">
+            <Component class="javax.swing.JLabel" name="jLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xbf;Ya tienes una cuenta?"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="linkLoginMouseClicked"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCreate">
+            <Component class="javax.swing.JButton" name="btnRegister">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CREAR CUENTA"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRegisterContrase&#xf1;a">
             </Component>
@@ -172,6 +185,27 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRegisterApellido">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Apellidos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="redirectLogin">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="redirectLoginMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

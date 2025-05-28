@@ -1,6 +1,5 @@
 package com.intranet.views;
 
-import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
 import com.intranet.app.AppContext;
 import com.intranet.models.Usuario;
 import com.intranet.utils.AlertUtils;
@@ -25,8 +24,10 @@ public class LoginView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtLoginContraseña = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        redirectRegistro = new javax.swing.JLabel();
+        redirectContraseña = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
+        redirectRegistro = new javax.swing.JLabel();
+        jLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,11 +58,11 @@ public class LoginView extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Contraseña");
 
-        redirectRegistro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        redirectRegistro.setText("¿Olvidaste tu contraseña?");
-        redirectRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+        redirectContraseña.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        redirectContraseña.setText("¿Olvidaste tu contraseña?");
+        redirectContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                redirectRegistroMouseClicked(evt);
+                redirectContraseñaMouseClicked(evt);
             }
         });
 
@@ -73,21 +74,38 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
+        redirectRegistro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        redirectRegistro.setText("Crear Cuenta");
+        redirectRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                redirectRegistroMouseClicked(evt);
+            }
+        });
+
+        jLabel.setText("No tienes una cuenta?");
+
         javax.swing.GroupLayout panelLoginLayout = new javax.swing.GroupLayout(panelLogin);
         panelLogin.setLayout(panelLoginLayout);
         panelLoginLayout.setHorizontalGroup(
             panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
+            .addGroup(panelLoginLayout.createSequentialGroup()
                 .addContainerGap(124, Short.MAX_VALUE)
-                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(redirectRegistro)
-                    .addComponent(jLabel4)
-                    .addComponent(txtLoginContraseña)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(txtLoginCorreo)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99))
+                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
+                        .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4)
+                            .addComponent(txtLoginContraseña)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(txtLoginCorreo)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(redirectContraseña, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginLayout.createSequentialGroup()
+                        .addComponent(jLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(redirectRegistro)
+                        .addGap(143, 143, 143))))
         );
         panelLoginLayout.setVerticalGroup(
             panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,11 +120,15 @@ public class LoginView extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtLoginContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(redirectRegistro)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(redirectContraseña)
+                .addGap(37, 37, 37)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(redirectRegistro)
+                    .addComponent(jLabel))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         background.add(panelLogin);
@@ -126,43 +148,52 @@ public class LoginView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void redirectRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redirectRegistroMouseClicked
-        RegisterView registerView = new RegisterView();
-        this.setVisible(false);
-        registerView.setVisible(true);
-    }//GEN-LAST:event_redirectRegistroMouseClicked
+    private void redirectContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redirectContraseñaMouseClicked
+    }//GEN-LAST:event_redirectContraseñaMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // Obtener valores de formulario
         String correo = txtLoginCorreo.getText();
         String password = txtLoginContraseña.getText();
         
-        // Validacion de valores ingresados
+       // Validacion de campos generales
         if (correo.isEmpty() || password.isEmpty()) {
             AlertUtils.showWarning("Todos los campos son obligatorios");
-        } else if (!Validador.esCorreoValido(correo)) {
-            AlertUtils.showWarning("Correo electrónico no válido");
-        } else if (!Validador.esPasswordValido(password)) {
-            AlertUtils.showWarning("La contraseña debe tener al menos 8 caracteres");
-        } else {
-            // Obtener resultado de autenticar usuario
-            Usuario usuario = AppContext.getUsuarioController().login(correo, password);
-            
-            // En caso encuentre el usuario
-            if(usuario != null){
-                AlertUtils.showSuccess("Bienvenido "+ usuario.getNombre()+"!");
-            } 
-            // Si no encuentra el usuario
-            else {
-                AlertUtils.showMessage("Usuario no encontrado");
-            }
+            return;
+        } 
+        
+        // Validación de campos individuales
+        String resultadoCorreo = Validador.esCorreoValido(correo);
+        if (!resultadoCorreo.equals("OK")) {
+            AlertUtils.showWarning(resultadoCorreo);
+            return;
+        } 
+        String resultadoContraseña = Validador.esPasswordSegura(password);
+        if (!resultadoContraseña.equals("OK")) {
+            AlertUtils.showWarning(resultadoContraseña);
+            return;
+        } 
+        
+        // Obtener resultado de autenticar usuario
+        Usuario usuario = AppContext.getUsuarioController().login(correo, password);
+
+        // En caso encuentre el usuario
+        if(usuario != null){
+            AlertUtils.showSuccess("Bienvenido "+ usuario.getNombre()+"!");
+        } 
+        // Si no encuentra el usuario
+        else {
+            AlertUtils.showMessage("Usuario no encontrado");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        FlatArcOrangeIJTheme.setup();
-        
+    private void redirectRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redirectRegistroMouseClicked
+        RegisterView registerView = new RegisterView();
+        this.setVisible(false);
+        registerView.setVisible(true);
+    }//GEN-LAST:event_redirectRegistroMouseClicked
+
+    public static void main(String args[]) {        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -174,12 +205,14 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel panelBg;
     private javax.swing.JPanel panelLogin;
+    private javax.swing.JLabel redirectContraseña;
     private javax.swing.JLabel redirectRegistro;
     private javax.swing.JTextField txtLoginContraseña;
     private javax.swing.JTextField txtLoginCorreo;
